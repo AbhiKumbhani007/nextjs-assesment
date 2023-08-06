@@ -86,21 +86,46 @@ function page() {
             <div className="accordion">
               {contentfulData.map((item: any, index: number) => (
                 <div key={index} className={style.accordionItem}>
-                  <button
-                    // Set the accordion item title and handle click event
-                    className={`${style.accordionTitle} ${
-                      activeIndex === index ? "active" : ""
-                    }`}
-                    onClick={() => handleAccordionClick(index)}
-                  >
-                    {item.fields.heading}
-                  </button>
-                  {/* Show the accordion item description if it's active */}
-                  {activeIndex === index && (
-                    <div className={style.accordionContent}>
-                      {item.fields.description}
-                    </div>
-                  )}
+                  <div className={style.card}>
+                    <button
+                      // Set the accordion item title and handle click event
+                      className={`${style.accordionTitle} ${
+                        activeIndex === index ? "active" : ""
+                      }`}
+                      onClick={() => handleAccordionClick(index)}
+                    >
+                      {item.fields.heading}
+                    </button>
+                    {activeIndex === index ? (
+                      <>
+                        <p className={style.cardDescriptionFullDescription}>
+                          {item.fields.description}
+                        </p>
+                        <button
+                          className={style.accordionButton}
+                          onClick={() => {
+                            handleAccordionClick(index);
+                          }}
+                        >
+                          Show Less
+                        </button>
+                      </>
+                    ) : (
+                      <>
+                        <p className={style.cardDescription}>
+                          {item.fields.description}
+                        </p>
+                        <button
+                          className={style.accordionButton}
+                          onClick={() => {
+                            handleAccordionClick(index);
+                          }}
+                        >
+                          Read More
+                        </button>
+                      </>
+                    )}
+                  </div>
                 </div>
               ))}
             </div>
