@@ -94,9 +94,9 @@ function page() {
             ))} */}
             <div className="accordion">
               {contentfulData.map((item: any, index: number) => (
-                <div key={index} className="accordion-item">
+                <div key={index} className={style.accordionItem}>
                   <button
-                    className={`accordion-title ${
+                    className={`${style.accordionTitle} ${
                       activeIndex === index ? "active" : ""
                     }`}
                     onClick={() => handleAccordionClick(index)}
@@ -104,7 +104,7 @@ function page() {
                     {item.fields.heading}
                   </button>
                   {activeIndex === index && (
-                    <div className="accordion-content">
+                    <div className={style.accordionContent}>
                       {item.fields.description}
                     </div>
                   )}
