@@ -130,7 +130,7 @@
   margin-top: 50px;
 }
 
-.card{
+.card {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -176,23 +176,34 @@
 
 .accordionItem {
   margin-bottom: 10px;
-  background-color: #61677A;
+  background-color: #176b87;
   border-radius: 8px;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  background-color: #86b6f6;
+  border: 1px solid #86b6f6;
+  border-radius: 12px 12px 0 0;
+  transition: background-color 0.3s;
+}
+
+.accordionLink {
+  color: #EFFFFD;
 }
 
 .accordionTitle {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  width: 100%;
-  padding: 10px;
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
+  color: black;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
   text-align: justify;
-
 }
 
 .accordionTitle.active {
@@ -206,14 +217,14 @@
   border: 1px solid #ccc;
   border-top: none;
   border-radius: 0 0 5px 5px;
-  color:#000
+  color: #000;
 }
 
-.accordionButton{
+.accordionButton {
   width: fit-content;
   margin-bottom: 10px;
-  background-color: #61677A;
-  border:none;
-  color: #F0DE36;
+  background-color: #176b87;
+  border: none;
+  color: #ccf2f4;
   cursor: pointer;
 }

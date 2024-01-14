@@ -1,7 +1,7 @@
 import { createAppAsyncThunk } from "@/lib/redux/createAppAsyncThunk";
 import { gql } from "@apollo/client";
-import { createSlice } from "@reduxjs/toolkit";
 import client from "../../../utils/apolloClient";
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState: any = {
   contentfulData: [],
@@ -16,17 +16,16 @@ export const getContentfulData: any = createAppAsyncThunk(
         query GetEntries {
           entryCollection {
             items {
+              __typename
               sys {
                 id
               }
-              ... on CardPost {
-                heading
-                description
-                thumbnail {
+              ... on accordionItems {
+                items {
+                  __typename
                   sys {
                     id
                   }
-                  url
                 }
               }
             }
