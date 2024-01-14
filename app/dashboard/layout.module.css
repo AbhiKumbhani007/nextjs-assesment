@@ -193,7 +193,17 @@
 }
 
 .accordionLink {
-  color: #EFFFFD;
+  color: #effffd;
+  padding: 6px 10px 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.accordionLink:hover{
+  background-color: #FFF;
+  color: #000;
+  border: 1px solid #ccc;
+  transition: all 0.3s ease-in-out;
 }
 
 .accordionTitle {
@@ -227,4 +237,9 @@
   border: none;
   color: #ccf2f4;
   cursor: pointer;
+}
+
+.linkBox {
+  display: flex;
+  padding: 0px 0px 8px 8px;
 }

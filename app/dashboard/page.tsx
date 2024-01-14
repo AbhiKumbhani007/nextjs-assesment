@@ -255,6 +255,18 @@ function page() {
                           >
                             {item.accordionItemHeading}
                           </div>
+                        </div>
+                        <p
+                          className={
+                            // activeIndex === index
+                            //   ? style.cardDescriptionFullDescription
+                            //   :
+                            style.cardDescription
+                          }
+                        >
+                          {documentToReactComponents(item?.description?.json)}
+                        </p>
+                        <div className={style.linkBox}>
                           <Link
                             className={style.accordionLink}
                             href={item?.link?.href || ""}
@@ -263,39 +275,6 @@ function page() {
                             {item?.link?.linkText}
                           </Link>
                         </div>
-                        {activeIndex === index ? (
-                          <>
-                            <p className={style.cardDescriptionFullDescription}>
-                              {documentToReactComponents(
-                                item?.description?.json
-                              )}
-                            </p>
-                            <button
-                              className={style.accordionButton}
-                              onClick={() => {
-                                handleAccordionClick(index);
-                              }}
-                            >
-                              Show Less
-                            </button>
-                          </>
-                        ) : (
-                          <>
-                            <p className={style.cardDescription}>
-                              {documentToReactComponents(
-                                item?.description?.json
-                              )}
-                            </p>
-                            <button
-                              className={style.accordionButton}
-                              onClick={() => {
-                                handleAccordionClick(index);
-                              }}
-                            >
-                              Read More
-                            </button>
-                          </>
-                        )}
                       </div>
                     </div>
                   )
